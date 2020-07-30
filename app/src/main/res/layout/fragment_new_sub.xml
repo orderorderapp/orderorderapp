@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    tools:context=".ui.main.NewSubFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+        <!-- TODO: Update blank fragment layout -->
+        <EditText
+            android:id="@+id/edit_text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tilauksen nimi"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/edit_text_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hinta"
+            android:inputType="numberDecimal"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Eräpäivä"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        <DatePicker
+            android:id="@+id/date_picker_due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:datePickerMode = "spinner"
+            android:calendarViewShown="false"
+            android:descendantFocusability="blocksDescendants"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Laskutusväli"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <NumberPicker
+                android:id="@+id/billingIntervalPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:descendantFocusability="blocksDescendants"
+                />
+
+            <LinearLayout
+                android:id="@+id/billingIntervalCustomParent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                android:layout_weight=".5">
+
+
+
+
+                <NumberPicker
+                    android:id="@+id/billingIntervalCustom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:descendantFocusability="blocksDescendants"
+                    android:layout_weight=".25"
+                    />
+
+                <NumberPicker
+                    android:id="@+id/billingIntervalCustom2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:descendantFocusability="blocksDescendants"
+                    android:layout_weight=".25"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ilmaisjakso"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <NumberPicker
+                android:id="@+id/FoCPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:descendantFocusability="blocksDescendants"
+                />
+
+            <LinearLayout
+                android:id="@+id/FoCPickerCustomParent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                android:layout_weight=".5">
+
+
+
+
+                <NumberPicker
+                    android:id="@+id/FoCPickerCustom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:descendantFocusability="blocksDescendants"
+                    android:layout_weight=".25"
+                    />
+
+                <NumberPicker
+                    android:id="@+id/FoCPickerCustom2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:descendantFocusability="blocksDescendants"
+                    android:layout_weight=".25"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

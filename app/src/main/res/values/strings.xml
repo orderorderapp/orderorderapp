@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">OrderOrder</string>
+
+    <string name="title_activity_login">Kirjaudu sisään</string>
+    <string name="title_activity_register">Rekisteröi tili</string>
+    <string name="prompt_email">Sähköposti</string>
+    <string name="prompt_password">Salasana</string>
+    <string name="prompt_first_name">Etunimi</string>
+    <string name="prompt_last_name">Sukunimi</string>
+    <string name="action_sign_in">Kirjaudu sisään</string>
+    <string name="action_move_to_register">Ei vielä tiliä? Rekisteröidy tästä.</string>
+    <string name="action_move_to_login">Rekisteröitynyt jo? Kirjaudu sisään tästä.</string>
+    <string name="action_register">Rekisteröidy</string>
+    <string name="welcome1">"Tervetuloa "</string>
+    <string name="welcome2">"!"</string>
+    <string name="invalid_username">Käyttäjätunnus on virheellinen</string>
+    <string name="invalid_password">Salasan tulee olla >5 merkkiä</string>
+    <string name="invalid_password_login">Anna salasana</string>
+    <string name="invalid_name">Syötä nimi</string>
+    <string name="login_failed">"Sisäänkirjautuminen epäonnistui"</string>
+    <string name="date_na">"pvm ?"</string>
+
+
+    <string name="EN_title_activity_login">LoginActivity</string>
+    <string name="EN_prompt_email">Email</string>
+    <string name="EN_prompt_password">Password</string>
+    <string name="EN_action_sign_in">Sign in or register</string>
+    <string name="EN_action_sign_in_short">Sign in</string>
+    <string name="EN_welcome">"Welcome !"</string>
+    <string name="EN_invalid_username">Not a valid username</string>
+    <string name="EN_invalid_password">Password must be >5 characters</string>
+    <string name="EN_login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
+

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "428096178383",
+    "firebase_url": "https://orderorderapp-cdf20.firebaseio.com",
+    "project_id": "orderorderapp-cdf20",
+    "storage_bucket": "orderorderapp-cdf20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428096178383:android:1938e765f13d500c150fba",
+        "android_client_info": {
+          "package_name": "com.example.orderorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428096178383-4gcrk1gaohir7c1j3pffjkcnnpgtc3ge.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.orderorder",
+            "certificate_hash": "e0151f8fa107142e670158e0218369e40166032a"
+          }
+        },
+        {
+          "client_id": "428096178383-mf0mtjamqt26k5oclahvsvl0je1uuqnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu17jWHUR55fGF4p_pMLv-wQIIe-2cv8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428096178383-mf0mtjamqt26k5oclahvsvl0je1uuqnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
