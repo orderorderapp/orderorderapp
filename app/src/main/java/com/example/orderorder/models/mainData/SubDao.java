@@ -8,6 +8,8 @@ import androidx.room.Update;
 
 import java.util.List;
 
+//Ei käytetä tässä versiossa koska tiedot haetaan Firebasen tietokannasta.
+
 @Dao
 public interface SubDao {
 

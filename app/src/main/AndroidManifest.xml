@@ -16,7 +16,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.userProfile.ProfileActivity"></activity>
-        <activity android:name=".LoginActivity" />
         <activity
             android:name=".ui.loginTemplate.LoginActivity"
             android:label="@string/title_activity_login" />

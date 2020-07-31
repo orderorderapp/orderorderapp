@@ -8,4 +8,9 @@
         android:title="Oma profiili"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/plan"
+        android:title="Vuosinäkymä"
+        app:showAsAction="never"/>
+
 </menu>

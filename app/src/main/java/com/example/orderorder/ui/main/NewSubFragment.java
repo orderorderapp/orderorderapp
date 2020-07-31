@@ -25,6 +25,7 @@ import android.widget.NumberPicker;
 import android.widget.Toast;
 
 import com.example.orderorder.R;
+import com.example.orderorder.SessionManager;
 import com.example.orderorder.models.mainData.Sub;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -50,6 +51,7 @@ public class NewSubFragment extends Fragment {
 
     private DocumentReference dref;
     private FirebaseFirestore fs = FirebaseFirestore.getInstance();
+    SessionManager sessionManager;
 
     private EditText editTextTitle;
     private EditText editTextPrice;
@@ -75,7 +77,7 @@ public class NewSubFragment extends Fragment {
             "DAY", "MONTH", "YEAR", "na"
     };
 
-    private int[] foCIntervalSelected = new int[]{0, 3}; //billingIntervalSelected {a, b} a = "kuinka kauan", b = 0=päivä, 1=kuukausi 2=vuosi, 3 = na. Oletusarvo kuukausittain
+    private int[] foCIntervalSelected = new int[]{0, 3}; //billingIntervalSelected {a, b} a = "kuinka kauan", b = 0=päivä, 1=kuukausi 2=vuosi, 3 = na. Oletusarvo "-"
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -238,7 +240,7 @@ public class NewSubFragment extends Fragment {
             Log.d("UusiSub", "Jatkui");
             double price = Double.parseDouble(priceString);
             CollectionReference subsref = fs
-                    .collection("subs");
+                    .collection("subs/"+sessionManager.getUid()+"/userSubs");
             subsref.add(new Sub(title, price, billingDueDate, billingIntervalSelected, foCIntervalSelected));
             //Toast.makeText(, "Syötä tilauksen nimi ja hinta");
         } catch (NumberFormatException e) {
@@ -258,6 +260,8 @@ public class NewSubFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_new_sub, container, false);
 
         activity = (AppCompatActivity) getActivity();
+        sessionManager = new SessionManager(activity.getApplicationContext());
+
         editTextTitle = v.findViewById(R.id.edit_text_title);
         editTextPrice = v.findViewById(R.id.edit_text_price);
         datePicker = v.findViewById(R.id.date_picker_due_date);
@@ -274,7 +278,6 @@ public class NewSubFragment extends Fragment {
 
 
         toolbar = v.findViewById(R.id.toolbar);
-
 
         toolbar.setNavigationIcon(R.drawable.menu_baseline_clear_close);
 
@@ -434,7 +437,7 @@ public class NewSubFragment extends Fragment {
     private void updateSubInit(String drefString) {
 
         Log.d("updateSub", "dref::" + drefString);
-        dref = fs.collection("subs").document(drefString);
+        dref = fs.collection("subs/"+sessionManager.getUid()+"/userSubs").document(drefString);
 
 
 

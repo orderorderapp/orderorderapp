@@ -90,12 +90,16 @@ public class LoginActivity extends AppCompatActivity {
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
                 }
-                setResult(Activity.RESULT_OK);
+                Intent output = new Intent();
+                output.putExtra(LoginActivity.USER_SERVICE, loginResult.getSuccess().getUid());
+                setResult(Activity.RESULT_OK, output);
 
                 //Complete and destroy login activity once successful
                 finish();
             }
         });
+
+
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
@@ -141,6 +145,8 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -149,8 +155,15 @@ public class LoginActivity extends AppCompatActivity {
             Log.d("registerActResult", "canceled..");
             return;
         } else if (resultCode == RESULT_OK) {
-            setResult(Activity.RESULT_OK);
-            Log.d("registerActResult", "OK..");
+            if(resultCode == RESULT_OK) {
+                if(data != null) {
+                    String uid = data.getStringExtra(USER_SERVICE);
+                    Intent output = new Intent();
+                    output.putExtra(LoginActivity.USER_SERVICE, uid);
+                    setResult(Activity.RESULT_OK, output);
+                }
+
+            }
             finish();
         }
     }

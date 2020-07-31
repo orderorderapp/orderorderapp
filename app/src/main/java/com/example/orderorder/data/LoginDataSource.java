@@ -10,10 +10,12 @@ import android.view.ActionMode;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.orderorder.SessionManager;
 import com.example.orderorder.data.model.LoggedInUser;
 import com.example.orderorder.ui.loginTemplate.LoginActivity;
 import com.example.orderorder.ui.loginTemplate.LoginViewModel;
@@ -62,6 +64,8 @@ public class LoginDataSource {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
+
+
 
     private Result<LoggedInUser> loginResult;
     void setLoginResult(Result<LoggedInUser> res){

@@ -5,6 +5,8 @@ package com.example.orderorder.data.model;
  */
 public class LoggedInUser {
 
+
+
     private String userId;
     private String displayName;
     private String firstName;
@@ -17,7 +19,10 @@ public class LoggedInUser {
         this.firstName = firstName;
         this.lastName = lastName;
         this.user = user;
+
     }
+
+
 
     public LoggedInUser(String userId, String displayName) {
         this.userId = userId;
@@ -30,5 +35,10 @@ public class LoggedInUser {
 
     public String getDisplayName() {
         return displayName;
+    }
+
+    public interface getUid {
+        String uid();
+
     }
 }

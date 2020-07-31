@@ -39,7 +39,7 @@ public class LoginViewModel extends ViewModel {
             public void onComplete(Result<LoggedInUser> result) {
                 if (result.getError() == null) {
                     LoggedInUser data = result.getData();
-                    loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName())));
+                    loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName(),data.getUserId())));
                 } else {
                     loginResult.setValue(new LoginResult(R.string.login_failed));
                 }
@@ -58,15 +58,13 @@ public class LoginViewModel extends ViewModel {
 
     public void login(String username, String password) {
         // can be launched in a separate asynchronous job
-        // loginRepository.login(username, password, firstName, lastName);
-        username = "1@a.fi";
-        password = "999999";
+
         loginRepository.login(username, password, new RepositoryCallback<LoggedInUser>() {
             @Override
             public void onComplete(Result<LoggedInUser> result) {
                 if (result.getError() == null) {
                     LoggedInUser data = result.getData();
-                    loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName())));
+                    loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName(),data.getUserId())));
                 } else {
                     loginResult.setValue(new LoginResult(R.string.login_failed));
                 }

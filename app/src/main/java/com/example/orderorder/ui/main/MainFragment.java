@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.orderorder.R;
+import com.example.orderorder.SessionManager;
 import com.example.orderorder.adapters.SubAdapter;
 import com.example.orderorder.models.mainData.Sub;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -34,11 +35,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 public class MainFragment extends Fragment {
+
+    SessionManager sessionManager;
+
     private AppCompatActivity activity;
     private Toolbar toolbar;
-
     private FirebaseFirestore fs = FirebaseFirestore.getInstance();
-    private CollectionReference subsRef = fs.collection("subs");
+    private CollectionReference subsRef;
     private SubAdapter adapter;
     FloatingActionButton addSubButton;
 
@@ -56,6 +59,8 @@ public class MainFragment extends Fragment {
         addSubButton = v.findViewById(R.id.button_add_sub);
 
         activity = (AppCompatActivity) getActivity();
+        sessionManager = new SessionManager(activity.getApplicationContext());
+        subsRef = fs.collection("subs/"+sessionManager.getUid()+"/userSubs");
         toolbar = v.findViewById(R.id.toolbar);
 
         //toolbar.setTitle("Lisää uusi tilaus");
@@ -64,7 +69,7 @@ public class MainFragment extends Fragment {
 
         return v;
     }
-
+/*
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         //inflater = getActivity().getMenuInflater();
@@ -75,6 +80,8 @@ public class MainFragment extends Fragment {
         //super.onCreateOptionsMenu(menu, inflater);
         super.onCreateOptionsMenu(menu, inflater);
     }
+
+ */
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

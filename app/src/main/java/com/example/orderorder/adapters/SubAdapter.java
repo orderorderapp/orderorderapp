@@ -69,6 +69,7 @@ public class SubAdapter extends FirestoreRecyclerAdapter<Sub, SubAdapter.SubHold
 
     public interface OnSubItemClickListener {
         void onItemClick(DocumentSnapshot documentSnapshot, int position);
+
     }
 
     public void setOnSubItemClickListener(OnSubItemClickListener listener) {

@@ -87,7 +87,10 @@ public class RegisterActivity extends AppCompatActivity {
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
                 }
-                setResult(Activity.RESULT_OK);
+                //setResult(Activity.RESULT_OK);
+                Intent output = new Intent();
+                output.putExtra(LoginActivity.USER_SERVICE, loginResult.getSuccess().getUid());
+                setResult(Activity.RESULT_OK, output);
 
                 //Complete and destroy login activity once successful
                 finish();
